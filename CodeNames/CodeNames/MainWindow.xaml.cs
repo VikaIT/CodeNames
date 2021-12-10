@@ -22,25 +22,22 @@ namespace CodeNames
     {
         private const int size = 5;
         private Button[,] buttons = new Button[size, size];
+        private TextBox chat;
         public MainWindow()
         {
             InitializeComponent();
-            AddingButtons();
-           /* Button button1 = new Button();
-            button1.Background = new SolidColorBrush(Colors.Azure);
-            button1.Content = "Progtime";
-            button1.Foreground = new SolidColorBrush(Colors.White);
-            grid1.Children.Add(button1);
-            //grid1.Children.Add(new Button());
-            // назначить элемент на позицию грида
-            Grid.SetColumn(button1, 1);
-            Grid.SetRow(button1, 1);
-            // подписка на событие Click
-            // Метод = обработчик события
-            button1.Click += Button1_Click;*/
+            AddingElems();
+
         }
-        public void AddingButtons()
+        public void AddingElems()
         {
+            chat = new TextBox();
+            Grid.SetColumn(chat, size);
+            Grid.SetRow(chat, 0);
+            Grid.SetRowSpan(chat, size);
+            chat.TextWrapping = TextWrapping.Wrap;
+            chat.Visibility = Visibility.Visible;
+            grid1.Children.Add(chat);
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
