@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,8 @@ namespace Server
     {
         static void Main(string[] args)
         {
+            AsyncServer server = new AsyncServer();
+            server.StartListenning();
         }
     }
 }
